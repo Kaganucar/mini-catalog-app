@@ -1,32 +1,59 @@
 # Mini Katalog Uygulaması
 
-Flutter ile geliştirilen örnek ürün kataloğu. Keşfet ekranında ürünler kartlarla listelenir. Ürün detayında ürün bilgileri görülür ve ürün sepete eklenebilir. Sepet ekranında eklenen ürünler görüntülenebilir ve kaldırılabilir.
+Software Persona Yazılım Mesleki Gelişim Programı kapsamında Flutter ve Dart ile geliştirdiğim ürün kataloğu ve sepet uygulaması.
 
-## Kullanılan Flutter sürümü
+## Özellikler
 
-Projenin arşivdeki SDK kaydı Flutter 3.47.9 ve Dart 3.13.7 sürümlerini gösterir. Kurulu SDK'yı `flutter --version` ile kontrol edin.
+- 20 ürünü görselleri ve fiyatlarıyla listeleme
+- Ürün adına göre arama
+- Ürün açıklamasını ve teknik özelliklerini görüntüleme
+- Sepete ürün ekleme ve eksi düğmesiyle bir adet kaldırma
+- Checkout ekranında ürün adedini ve toplam tutarı görüntüleme
+- Demo siparişini onayladıktan sonra sepeti boşaltma
 
-## Çalıştırma
+Checkout demo amaçlıdır. Ödeme alınmaz.
 
-Proje klasöründe bağımlılıkları yükleyin.
+## Kurulum ve Çalıştırma
+
+**SDK sürümleri:** Flutter 3.47.9 ve Dart 3.13.7.
+
+Terminali `pubspec.yaml` dosyasının bulunduğu klasörde açın ve bağımlılıkları yükleyin:
 
 ```bash
 flutter pub get
 ```
 
-Android Studio'da bir emülatör başlatın veya fiziksel cihaz bağlayın. Cihazı listeleyip uygulamayı çalıştırın.
+Chrome’da çalıştırmak için:
+
+```bash
+flutter run -d chrome
+```
+
+Android’de çalıştırmak için bir emülatör başlatın veya fiziksel cihaz bağlayın. Ardından cihaz kimliğini bulun ve uygulamayı çalıştırın:
 
 ```bash
 flutter devices
-flutter run
+flutter run -d <cihaz_kimligi>
 ```
 
-Chrome ile çalıştırmak için `flutter run -d chrome` komutunu kullanabilirsiniz.
+## Ekran Görüntüleri
 
-## Katalog verileri
+| Ana Sayfa | Ürün Listesi | Ürün Detayı |
+| --- | --- | --- |
+| ![Ana sayfa](screenshots/01_ana_sayfa.png) | ![Ürün listesi](screenshots/02_urun_listesi.png) | ![Ürün detayı](screenshots/03_urun_detayi.png) |
 
-Banner ve 20 WANTAPI ürünü uygulama paketindeki dosyalardan okunur. Yedi görsel yönergenin 4. sayfasındaki örnek ekranlardan kırpıldı. Kalan 13 ürün için temsili görseller üretildi. 20 ürünün tamamı görselini assets/products klasöründen okur. Fake Store API ve DummyJSON çıktıları `ornek_veriler/` klasöründedir.
+| Dolu Sepet | Boş Sepet |
+| --- | --- |
+| ![Dolu sepet](screenshots/04_dolu_sepet.png) | ![Boş sepet](screenshots/05_bos_sepet.png) |
 
-## Sepet ve demo sipariş
+## Veri ve Görseller
 
-Sepetteki eksi düğmesi bir adedi kaldırır. Checkout ürün adedini ve toplam tutarı gösterir. Demo siparişi onaylandığında sepet boşalır. Ödeme alınmaz.
+Katalog, WANTAPI örnek verisini yerel JSON dosyasından okur. Yedi ürün görseli proje yönergesinden alınmıştır. Kalan 13 ürün için temsili görseller kullanılmıştır.
+
+## Testler
+
+```bash
+flutter test
+```
+
+**Hazırlayan:** Kağan Uçar
